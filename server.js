@@ -6,12 +6,14 @@ const Layouts = require("express-ejs-layouts");
 const bodyParser = require("body-parser");
 
 const indexRoutes = require("./routes/index");
+const creatorRoutes = require("./routes/director");
 
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
 app.set("layout", "layouts/layout");
 app.use(Layouts);
 app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ limit: "10mb", extended: false }));
 
 // db connection
 const mongoose = require("mongoose");
@@ -26,6 +28,7 @@ db.once("open", () => console.log("connected to mongodb successfully !"));
 
 // routes
 app.use("/", indexRoutes);
+app.use("/directors", creatorRoutes);
 
 const PORT = process.env.PORT || 5000;
 
