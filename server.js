@@ -7,6 +7,7 @@ const bodyParser = require("body-parser");
 
 const indexRoutes = require("./routes/index");
 const creatorRoutes = require("./routes/director");
+const movieRoutes = require("./routes/movies");
 
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
@@ -29,6 +30,7 @@ db.once("open", () => console.log("connected to mongodb successfully !"));
 // routes
 app.use("/", indexRoutes);
 app.use("/directors", creatorRoutes);
+app.use("/movies", movieRoutes);
 
 const PORT = process.env.PORT || 5000;
 
