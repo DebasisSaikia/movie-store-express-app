@@ -1,6 +1,6 @@
 <div>
     <label for="name">Title</label>
-    <input type="text" name="title"  value="<%=movie.title%>">
+    <input type="text" name="title" value="<%=movie.title%>">
 </div>
 
 <div>
@@ -18,20 +18,20 @@
 
 <div>
     <label>Release Date</label>
-    <input type="date" name="releaseDate" 
+    <input type="date" name="releaseDate"
         value="<%=movie.releaseDate == null ? '' : movie.releaseDate.toISOString().split('T')[0] %>">
 </div>
 
 <div>
     <label>Rating</label>
-    <input type="number" name="ratingCount"  min="1" max="10" value="<%=movie.ratingCount%>">
+    <input type="number" name="ratingCount" min="1" max="10" value="<%=movie.ratingCount%>">
 </div>
 <div>
-    <label >Poster</label>
-    <input type="file" name="cover">
+    <label>Poster</label>
+    <input type="file" name="cover"class="filepond">
 </div>
 
 <div>
-    <label >Description</label>
-    <textarea name="description" ><%=movie.description%></textarea>
+    <label>Description</label>
+    <textarea name="description"><%=movie.description%></textarea>
 </div>
