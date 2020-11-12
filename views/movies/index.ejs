@@ -18,6 +18,8 @@
 <hr>
 <div>
     <% movies.forEach(movie=>{%>
-    <img src="<%=movie.coverPosterPath%>" height="150" width="100">
+    <a href="/movies/<%=movie.id%>">
+        <img src="<%=movie.coverPosterPath%>" height="150" width="100">
+    </a>
     <%})%>
 </div>

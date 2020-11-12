@@ -1,0 +1,9 @@
+<h2><%=movie.title%></h2>
+<img width="100" height="150" src="<%=movie.coverPosterPath%>">
+<div>By: <%=movie.director.name%></div>
+<div>Released: <%=movie.releaseDate.toLocaleDateString()%></div>
+<div>Rating: <%=movie.ratingCount%></div>
+<div>Description: <%=movie.description%></div>
+<a href="/movies/<%=movie.id%>/edit"><i class="las la-edit"></i>Edit</a>
+<%-include('../partials/deleteForm',{url:`/movies/${movie.id}`})%>
+<a href="/directors/<%=movie.director.id%>"><i class="lar la-eye"></i>View Director</a>
