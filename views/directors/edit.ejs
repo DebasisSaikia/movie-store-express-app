@@ -1,0 +1,7 @@
+<h2>Edit Director</h2>
+
+<form action="/directors/<%=director.id%>?_method=PUT" method="POST">
+    <%-include('_formPart')%>
+    <a href="/directors/<%=director.id%>">Cancel</a>
+    <button type="submit">Update</button>
+</form>

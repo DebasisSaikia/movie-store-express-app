@@ -1,7 +1,7 @@
 <h2>Search Directors</h2>
 <form action="/directors" method="GET">
     <input type="text" name="name" placeholder="Search Name" value="<%=searchResults.name%>">
-    <button type="submit">Search</button>
+    <button type="submit"><i class="las la-search"></i> Search</button>
 </form>
 
 <hr>
@@ -10,4 +10,9 @@
 <div>
     <%=director.name%>
 </div>
+<a href="/directors/<%=director.id%>"><i class="lar la-eye"></i>View</a>
+<a href="/directors/<%=director.id%>/edit"><i class="las la-user-edit"></i>Edit</a>
+
+<%-include('../partials/deleteForm',{url:`/directors/${director.id}`})%>
+
 <%})%>
